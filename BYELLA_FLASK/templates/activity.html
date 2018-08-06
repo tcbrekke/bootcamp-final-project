@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Wine Ratings</title>
+   
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="/static/activity.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<header id="header">
+   
+</header>
+ <body>
+    <section style="margin:30px"></section>
+   
+    <section style="margin:30px"></section>  
+  <div class="container">
+      <div class="col-md-3">
+          <div class="well">
+                <form action="{{ url_for('send') }}" method="post">
+                    <div class="form-group m-top-75">
+                      <label for="Year">Enter Year:</label>
+                      <input type="text" name="Year" class="form-control" >
+                      <label for="Variety">Enter Variety:</label> 
+                      <!-- UserID2 ==Variety -->
+                      <input type="text" name="Variety" class="form-control">
+                      <label for="Price">Price</label>
+                      <!-- New ==Price -->
+                      <input type="text" name="Price" class="form-control">
+                      <!-- NoOfDays ==Region -->
+                      <label for="Region">Enter Region</label>
+                      <input type="text" name="Region" class="form-control">
+
+                      <label for="Country">Enter Country</label>
+                      <input type="text" name="Country" class="form-control">
+
+                      <label for="Decription_Len">Enter Length of Description</label>
+                      <input type="text" name="Decription_Len" class="form-control">
+                     <button id="submit" class="btn btn-primary right">Submit</button>
+                     </div>
+                  </form>
+          </div>
+        </div>
+  </div>
+
+  <div class="container">
+      <div class="col-md-6">
+          <div id="Output">The Wine Rating is </div>
+      </div>
+  </div>
+
+  
+
+     
+
+
+</body>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+<!-- JavaScript Libraries -->
+<script src="static/jquery.min.js"></script>
+<script src="static/jquery-migrate.min.js"></script>
+<script src="static/bootstrap.bundle.min.js"></script>
+<script src="static/easing.min.js"></script>
+<script src="static/wow.min.js"></script>
+<script src="static/counterup.min.js"></script>
+<script src="static/hoverIntent.js"></script>
+<script src="static/superfish.min.js"></script>
+
+
+</html>
