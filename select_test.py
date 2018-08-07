@@ -11,7 +11,7 @@ connection = engine.connect()
 
 year = 2008
 
-wines = connection.execute(f"SELECT * FROM wine_table WHERE year == {year}")
+wines = connection.execute(f"SELECT * FROM wine_table WHERE year = {year}")
 
 print(wines)
 
