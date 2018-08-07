@@ -10,8 +10,10 @@ import pickle
 
 app = Flask(__name__)
 
-#load the predictive model based on wine descriptions
-text_predict_model = pickle.load(open(filename, 'rb'))
+#load the predictive model and text transformer models based on wine descriptions
+text_predict_model = pickle.load(open('wine_text_model.sav', 'rb'))
+vect_model = pickle.load(open('vect_model.sav', 'rb'))
+tfidf_model = pickle.load(open('tfidf_model.sav', 'rb'))
 
 # Flask Routes
 #-------------------------------
@@ -22,13 +24,18 @@ def index():
 @app.route('/description_score/<text>')
 def description_score(text):
     words_list = [text]
-    words_count = vect.transform(words_list)
-    words_tfidf = tfidf_transformer.transform(words_count)
-    predict_score = sgdc.predict(words_tfidf)
+    words_count = vect_model.transform(words_list)
+    words_tfidf = tfidf_model.transform(words_count)
+    predict_score = text_predict_model.predict(words_tfidf)
     return jsonify(predict_score[0])
 
-@app.route('choice_score/<choice>')
-def choice_score(text):
+@app.route('choice_score')
+def choice_score():
+    variety = request.args.get('variety', None)
+
+@app.route('wine_chooser')
+def wine_chooser():
+    price = request.args.get('price', None)
 
 
 if __name__ == "__main__":
