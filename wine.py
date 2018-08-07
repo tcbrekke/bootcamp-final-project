@@ -11,6 +11,8 @@ import os
 
 app = Flask(__name__)
 
+
+
 #load the predictive model and text transformer models based on wine descriptions
 text_predict_model = pickle.load(open('wine_text_model.sav', 'rb'))
 vect_model = pickle.load(open('vect_model.sav', 'rb'))
@@ -21,8 +23,8 @@ tfidf_model = pickle.load(open('tfidf_model.sav', 'rb'))
 CODE HERE
 '''
 
-'''
-commenting out the database code for now as I don't have the database
+
+# commenting out the database code for now as I don't have the database
 #connect to the database and set up variables for relevant columns
 DATABASE_URL = os.environ['DATABASE_URL']
 engine = create_engine(DATABASE_URL)
@@ -31,7 +33,7 @@ conn = engine.connect()
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 session = Session(engine)
-'''
+
 
 
 # Flask Routes
@@ -71,7 +73,10 @@ that fit the user's parameters
 '''
 @app.route('/wine_chooser')
 def wine_chooser():
-    price = request.args.get('price', None)
+    variety  = request.args.get('variety_input', None)
+    price  = request.args.get('price_input', None)
+
+    results = connection.execute(f"SELECT * FROM wine_table WHERE variety = {variety} AND price < {price} ORDER BY score DESC LIMIT 3").fetchall()
 
 
 if __name__ == "__main__":
