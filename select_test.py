@@ -13,5 +13,5 @@ year = 2008
 
 wines = connection.execute(f"SELECT * FROM wine_table WHERE year = {year}")
 
-print(wines)
+print(wines.first())
 
