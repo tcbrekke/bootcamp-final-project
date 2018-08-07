@@ -11,10 +11,10 @@ connection = engine.connect()
 
 year = 2008
 
-wines = connection.execute(f"SELECT * FROM wine_table WHERE year = {year}")
+wines = connection.execute(f"SELECT * FROM wine_table WHERE year = {year}").fetchall()
 
 wines_df = pd.DataFrame(wines)
 
-print(wines.first())
+print(wines)
 print(wines_df)
 
