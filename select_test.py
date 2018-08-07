@@ -13,5 +13,7 @@ year = 2008
 
 wines = connection.execute(f"SELECT * FROM wine_table WHERE year = {year}")
 
+wines_df = pd.read_sql(wines)
+
 print(wines.first())
 
