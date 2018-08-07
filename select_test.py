@@ -9,4 +9,9 @@ DATABASE_URL = os.environ['DATABASE_URL']
 engine = create_engine(DATABASE_URL)
 connection = engine.connect()
 
-connection.execute("SELECT * FROM wine_table")
+year = 2008
+
+wines = connection.execute(f"SELECT * FROM wine_table WHERE year == {year}")
+
+print(wines)
+
