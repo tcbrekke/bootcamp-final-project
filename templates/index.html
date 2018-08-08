@@ -30,17 +30,45 @@
     </div>
   </div> 
 
-    <select id="year-selector"></select>
-    <select id="variety-selector"></select>
+  <!-- build the dropdown selectors for year, varetal, region, and country, and max price entry -->
+    <form>
+        <div class="form-group">
+            <label for="variety-selector">Choose a year</label>
+            <select class="form-control" id="year-selector">
+            </select>
+          </div>
+        <div class="form-group">
+          <label for="variety-selector">Choose a varietal</label>
+          <select class="form-control" id="variety-selector">
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Example multiple select</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </form>
+
 
     <!-- section to put in text input and get a predicted score output -->
+  <div class='row'>
     <form>
         <div class="form-group">
           <label for="predictiontext">Wine Description</label>
-          <input type="text" class="form-control" id="predictiontext" aria-describedby="emailHelp" placeholder="nter a wine description">
+          <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" placeholder="Enter a wine description">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <button type="submit" class="btn btn-primary" onclick="desc_predictor(this.value)">Get a wine score!</button>
+    </form>
+  </div>
 
   <!-- separator between the user input section and the data viz section -->
   <div class="row">
