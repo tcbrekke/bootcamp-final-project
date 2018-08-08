@@ -80,7 +80,7 @@ def wine_chooser():
 
     results_df = pd.DataFrame(results)
 
-    return pd.to_json(results_df)
+    return results_df.to_json(orient="index")
 
 if __name__ == "__main__":
     app.run(debug=True)
