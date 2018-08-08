@@ -1,4 +1,5 @@
 //set initial variables
+var textPredictor = document.getElementById("predictiontext");
 
 // var text = document.getElementById("predictiontext").addEventListener("click", function() {
 // 	text_value = d3.select("#predictiontext").node().value;
@@ -14,7 +15,7 @@
 
 function desc_predictor(text) {
     console.log(text);
-    var text_url = '/description_score/' + text;
+    // var text_url = '/description_score/' + text;
     // d3.json(text_url, function(response) {
         
     
