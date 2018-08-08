@@ -19,55 +19,82 @@
 
 <body>
     
-  <div class="row" style="padding-left: 100px">
+  <div class="row" style="padding-left: 80px">
     <h1>Explore and Drink Wine</h1>
   </div> 
 
   <div class="row">
-    <div class="col-md-12 introtext" style="padding-left: 100px; padding-right: 200px; padding-bottom: 20px; margin-top: 30px">
+    <div class="col-md-12 introtext" style="padding-left: 80px; padding-right: 200px; padding-bottom: 20px; margin-top: 30px">
         <p><span class="first-letters">Here's some text about this project</p>
         <hr>
     </div>
   </div> 
 
+  <div class='row'>
+        <div class='col-md-12 main-text'>
+            <h3>
+                Find your perfect wine!
+            </h3>
+            <p>Use dropdowns to select year, varietal, region, and enter a maximum price. You'll get a prediction for how good this wine should be,
+                and you'll also be presented with the three best wines that match your choices from a database of 100,000 wines.
+            </p>
+        </div>
+    </div>
+
   <!-- build the dropdown selectors for year, varetal, region, and country, and max price entry -->
-    <form>
-        <div class="form-group">
-            <label for="variety-selector">Choose a year</label>
-            <select class="form-control" id="year-selector">
-            </select>
-          </div>
-        <div class="form-group">
-          <label for="variety-selector">Choose a varietal</label>
-          <select class="form-control" id="variety-selector">
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect2">Example multiple select</label>
-          <select multiple class="form-control" id="exampleFormControlSelect2">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Example textarea</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-      </form>
+  <div class='row'>
+    <div class='col-md-6'> 
+        <form>
+                <div class="form-group">
+                    <label for="variety-selector">Choose a year</label>
+                    <select class="form-control" id="year-selector">
+                    </select>
+                </div>
+                <div class="form-group">
+                <label for="variety-selector">Choose a varietal</label>
+                <select class="form-control" id="variety-selector">
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="exampleFormControlSelect2">Example multiple select</label>
+                <select multiple class="form-control" id="exampleFormControlSelect2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </form>
+    </div>
+  </div>
 
 
     <!-- section to put in text input and get a predicted score output -->
   <div class='row'>
-    <form>
-        <div class="form-group">
-          <label for="predictiontext">Wine Description</label>
-          <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" placeholder="Enter a wine description">
-        </div>
-        <button id="textEntry" type="submit" class="btn btn-primary">Get a wine score!</button>
-    </form>
+      <div class='col-md-12 main-text'>
+          <h3>
+              Be a wine critic!
+          </h3>
+          <p>Create your own wine description below, and get a predicted wine score ranging from 80-100, based on a machine learning algorithm.</p>
+      </div>
+  </div>
+    <div class='row'>
+    <div class='col-md-6'>
+        <form>
+            <div class="form-group">
+            <label for="predictiontext">Wine Description</label>
+            <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" placeholder="Enter a wine description">
+            </div>
+            <button id="textEntry" type="button" class="btn btn-primary formbutton">Get a wine score!</button>
+        </form>
+    </div>
+    <div class='col-md-6' id='descriptionScore'>
+    </div>
   </div>
 
   <!-- separator between the user input section and the data viz section -->

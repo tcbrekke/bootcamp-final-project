@@ -19,9 +19,11 @@ textBtn.addEventListener("click", desc_predictor, false);
 function desc_predictor() {
     var text = predictiontext.value;
     console.log(text);
-    
-    // var text_url = '/description_score/' + text;
-    // d3.json(text_url, function(response) {
-        
-    
+    text_url = '/description_score/' + text;
+
+    d3.json(text_url, function(error, response) {
+        console.log(error);
+        var score = response;
+        console.log(score);    
+    });
 }

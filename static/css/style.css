@@ -66,3 +66,15 @@ h1 {
     /* font-variant: small-caps; */
     color: rgb(146, 19, 19);
 }
+
+.form-group {
+    padding-left: 100px;
+}
+
+.formbutton {
+    margin-left: 100px;
+}
+
+.main-text {
+    margin-left: 100px;
+}
