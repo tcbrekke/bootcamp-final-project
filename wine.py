@@ -78,6 +78,9 @@ def wine_chooser():
 
     results = connection.execute(f"SELECT * FROM wine_table WHERE variety = {variety} AND price < {price} ORDER BY score DESC LIMIT 3").fetchall()
 
+    results_df = pd.DataFrame(results)
+
+    return pd.to_json(results_df)
 
 if __name__ == "__main__":
     app.run(debug=True)
