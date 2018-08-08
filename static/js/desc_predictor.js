@@ -15,7 +15,7 @@ var textPredictor = document.getElementById("predictiontext");
 
 function desc_predictor(text) {
     console.log(text);
-    preventDefault();
+    text.preventDefault();
     // var text_url = '/description_score/' + text;
     // d3.json(text_url, function(response) {
         
