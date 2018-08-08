@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Explore and Drink Wine</title>
+
+  <!--CSS stylesheets-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--our stylesheets-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+  <!--D3 cdn-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+
+</head>
+
+<body>
+    
+  <div class="row" style="padding-left: 80px">
+    <h1>Explore and Drink Wine</h1>
+  </div> 
+
+  <div class="row">
+    <div class="col-md-10 introtext" style="padding-left: 80px; padding-right: 200px; padding-bottom: 20px; margin-top: 30px">
+        <p>We analzyed over 100,000 wines to build machine learning (ML) algorithms to predict wine quality. First, we used Tableau to learn
+            and understand the data. You can <a href='#tableau'>explore these visualizations below.</a>
+        </p>
+        <p>Next we made two ML models. You can play with those! Choose features of a wine to be given a predicted quality as well as 3 of the best wines
+            that fit your choices. Or, play wine critic and see how our ML model will rate a wine based on a description you write.
+        </p>
+    </div>
+  </div>
+  <div class="row">
+      <hr>
+  </div> 
+
+  <div class='row'>
+        <div class='col-md-6 main-text'>
+            <h3>
+                Find your perfect wine!
+            </h3>
+            <p>Use dropdowns to select year, varietal, region, and enter a maximum price. You'll get a prediction for how good this wine should be,
+                and you'll also be presented with the three best wines that match your choices from a database of 100,000 wines.
+            </p>
+        </div>
+    </div>
+
+  <!-- build the dropdown selectors for year, varetal, region, and country, and max price entry -->
+  <div class='row'>
+    <div class='col-md-6'> 
+        <form>
+                <div class="form-group">
+                    <label for="variety-selector">Choose a Year</label>
+                    <select class="form-control" id="year-selector">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="variety-selector">Choose a Varietal</label>
+                    <select class="form-control" id="variety-selector">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="region-selector">Choose a Region</label>
+                    <select class="form-control" id="region-selector">
+                    </select>
+                </div>
+                    <div class="form-group">
+                    <label for="country-selector">Choose a Country</label>
+                    <select class="form-control" id="country-selector">
+                    </select>
+                </div>
+                <div class="form-group">
+                <label for="price">Set a maximum price</label>
+                <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="$$$">
+                </div>
+                <button id="chooserEntry" type="button" class="btn btn-warning formbutton">Get a predicted score and your ideal wines</button>
+            </form>
+    </div>
+    <div class='col-md-6' id='wine-selections' style='padding-left:30px'>
+<!-- the output from the database search and ML algorithm based on selectors goes here -->
+    </div>
+  </div>
+
+
+    <!-- section to put in text input and get a predicted score output -->
+  <div class='row'>
+      <div class='col-md-12 main-text' style="margin-top:20px">
+          <h3>
+              Be a wine critic!
+          </h3>
+          <p>Create your own wine description below, and get a predicted wine score ranging from 80-100, based on a machine learning algorithm.</p>
+      </div>
+  </div>
+    <div class='row'>
+    <div class='col-md-6'>
+        <form>
+            <div class="form-group">
+            <label for="predictiontext">Wine Description</label>
+            <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" rows='2' placeholder="Enter a wine description">
+            </div>
+            <button id="textEntry" type="button" class="btn btn-warning formbutton">Get a wine score</button>
+        </form>
+    </div>
+    <div class='col-md-6' id='descriptionScore' style="padding-left:25px">
+<!-- the score will be generated and placed here -->
+    </div>
+  </div>
+
+  <!-- separator between the user input section and the data viz section -->
+  <div class="row">
+      <hr>
+  </div>
+
+    <!-- Tableau Viz's will go in this div-->
+    <a name='tableau'></a>
+    <div class='row'>
+    <div class='tableauPlaceholder' id='viz1533689615153' style='position: relative'><noscript>
+        <a href='#'><img alt='Dashboard ' 
+            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;Wine_24&#47;Dashboard&#47;1_rss.png' 
+            style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                <param name='embed_code_version' value='3' /> 
+                <param name='site_root' value='' />
+                <param name='name' value='Wine_24&#47;Dashboard' />
+                <param name='tabs' value='no' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;Wine_24&#47;Dashboard&#47;1.png' /> 
+                <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object>
+    </div>
+    </div>    
+    
+    <div class="row">
+            <div class="col-md-12 footer">
+              <p>Copyright 2018 Steven Zulim, Aaron Burke, Thom Brekke, and Bhavani Yella</p>
+            </div>
+          </div>
+     
+    <!-- Links to our JS files -->
+    <script src="{{ url_for('static', filename='js/desc_predictor.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/year_dropdown.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/varieties_dropdown.js') }}"></script>
+    
+    <!-- Tableau Script-->
+    <script type='text/javascript'> 
+        var divElement = document.getElementById('viz1533689615153'); 
+        var vizElement = divElement.getElementsByTagName('object')[0]; 
+        vizElement.style.width='1000px';
+        vizElement.style.height='7027px';                    
+        var scriptElement = document.createElement('script');                    
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+    </script>
+</body>
+
+</html>
