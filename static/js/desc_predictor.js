@@ -1,5 +1,6 @@
 //set initial variables
-var textPredictor = document.getElementById("predictiontext");
+var textBtn = document.querySelector("#textEntry");
+var predictiontext = document.querySelector("#predictiontext");
 
 // var text = document.getElementById("predictiontext").addEventListener("click", function() {
 // 	text_value = d3.select("#predictiontext").node().value;
@@ -13,8 +14,10 @@ var textPredictor = document.getElementById("predictiontext");
 
 //build the query url from text that will be
 
-function desc_predictor(text) {
-    preventDefault();
+textBtn.addEventListener("click", desc_predictor, false);
+
+function desc_predictor() {
+    var text = predictiontext.value;
     console.log(text);
     
     // var text_url = '/description_score/' + text;
