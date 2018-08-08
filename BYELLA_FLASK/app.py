@@ -28,20 +28,20 @@ app = Flask(__name__, static_url_path='/static')
 
 # Static HTML Pages
 #################################################
-@app.route("/")
-def welcome():
-    return render_template("activity.html")
+# @app.route("/")
+# def welcome():
+#     return render_template("activity.html")
 
 # Interactive Routes 
 #################################################
 
-@app.route("/search", methods=["GET", "POST"])
-
+@app.route("/search", methods=['GET'])
+# <variety>/<price>/<region>/<country>
 def send():
-    year = request.args.get('year_input')
-    variety  = request.args.get('variety_input')
-    price  = request.args.get('price_input')
-    region  = request.args.get('region_input')
+    year = request.args.get('year')
+    variety  = request.args.get('variety')
+    price  = request.args.get('price')
+    region  = request.args.get('region')
     country  = request.args.get('country')
     user_dict={ 'year': year,'variety': variety,'price':price,'region_1': region,'country': country}
     # user_dict={ 'year': 2011,'variety': "Pinot Noir",'price':13,'region_1': "Napa",'country': "Us"}
@@ -77,12 +77,11 @@ def send():
     print(f"Predicted class: {model.predict_classes(new_user_data_scalar)}")
     x=model.predict_classes(new_user_data_scalar)
     print(x)
-    return x
+    return jsonify(int((x)))
+    # return year
+
     # return render_template('activity.html', output=x)
 
-@app.route("/d3")
-def calld3():
-    return render_template("d3.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
