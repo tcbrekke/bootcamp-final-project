@@ -24,14 +24,21 @@
   </div> 
 
   <div class="row">
-    <div class="col-md-12 introtext" style="padding-left: 80px; padding-right: 200px; padding-bottom: 20px; margin-top: 30px">
-        <p><span class="first-letters">Here's some text about this project</p>
-        <hr>
+    <div class="col-md-10 introtext" style="padding-left: 80px; padding-right: 200px; padding-bottom: 20px; margin-top: 30px">
+        <p>We analzyed over 100,000 wines to build machine learning (ML) algorithms to predict wine quality. First, we used Tableau to do learn
+            and understand the date. You can <a href='#tableau'>explore these visualizations below.</a>
+        </p>
+        <p>You can also play with the machine learning models. Choose features of a wine to be given a predicted quality as well as 3 of the best wines
+            that fit your choices. Or, play wine critic and see how our ML model will rate a wine based on a description you write.
+        </p>
     </div>
+  </div>
+  <div class="row">
+      <hr>
   </div> 
 
   <div class='row'>
-        <div class='col-md-12 main-text'>
+        <div class='col-md-6 main-text'>
             <h3>
                 Find your perfect wine!
             </h3>
@@ -46,30 +53,34 @@
     <div class='col-md-6'> 
         <form>
                 <div class="form-group">
-                    <label for="variety-selector">Choose a year</label>
+                    <label for="variety-selector">Choose a Year</label>
                     <select class="form-control" id="year-selector">
                     </select>
                 </div>
                 <div class="form-group">
-                <label for="variety-selector">Choose a varietal</label>
-                <select class="form-control" id="variety-selector">
-                </select>
+                    <label for="variety-selector">Choose a Varietal</label>
+                    <select class="form-control" id="variety-selector">
+                    </select>
                 </div>
                 <div class="form-group">
-                <label for="exampleFormControlSelect2">Example multiple select</label>
-                <select multiple class="form-control" id="exampleFormControlSelect2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
+                    <label for="region">Choose a Region</label>
+                    <select class="form-control" id="region">
+                    </select>
+                </div>
+                    <div class="form-group">
+                    <label for="country">Choose a Country</label>
+                    <select class="form-control" id="country">
+                    </select>
                 </div>
                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="price">Set a maximum price</label>
+                <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="$$$">
                 </div>
+                <button id="chooserEntry" type="button" class="btn btn-primary formbutton">Get a predicted score and your ideal wines</button>
             </form>
+    </div>
+    <div class='col-md-6'>
+
     </div>
   </div>
 
@@ -88,9 +99,9 @@
         <form>
             <div class="form-group">
             <label for="predictiontext">Wine Description</label>
-            <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" placeholder="Enter a wine description">
+            <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" rows='2' placeholder="Enter a wine description">
             </div>
-            <button id="textEntry" type="button" class="btn btn-primary formbutton">Get a wine score!</button>
+            <button id="textEntry" type="button" class="btn btn-primary formbutton">Get a wine score</button>
         </form>
     </div>
     <div class='col-md-6' id='descriptionScore'>
@@ -103,7 +114,7 @@
   </div>
 
     <!-- Tableau Viz's will go in this div-->
-    <div class='tableauPlaceholder' id='viz1533689615153' style='position: relative'><noscript>
+    <a name='tableau'></a><div class='tableauPlaceholder' id='viz1533689615153' style='position: relative'><noscript>
         <a href='#'><img alt='Dashboard ' 
             src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;Wine_24&#47;Dashboard&#47;1_rss.png' 
             style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'>
