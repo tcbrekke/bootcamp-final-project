@@ -1,4 +1,5 @@
-d3.selectAll('submit').on("click", function(){
+d3.select('#submit').on("click", function(){
+  console.log('submit was clicked');
   year_input = document.getElementByName("Year").value;
   variety_input = document.getElementByName("Variety").value;
   price_input = document.getElementByName("Price").value;
@@ -6,3 +7,5 @@ d3.selectAll('submit').on("click", function(){
   country_input = document.getElementByName("Country").value;
   description_len_input = document.getElementByName("Description_Len").value;
 })
+
+console.log('waddup')
