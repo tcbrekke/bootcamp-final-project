@@ -26,9 +26,9 @@
   <div class="row">
     <div class="col-md-10 introtext" style="padding-left: 80px; padding-right: 200px; padding-bottom: 20px; margin-top: 30px">
         <p>We analzyed over 100,000 wines to build machine learning (ML) algorithms to predict wine quality. First, we used Tableau to do learn
-            and understand the date. You can <a href='#tableau'>explore these visualizations below.</a>
+            and understand the data. You can <a href='#tableau'>explore these visualizations below.</a>
         </p>
-        <p>You can also play with the machine learning models. Choose features of a wine to be given a predicted quality as well as 3 of the best wines
+        <p>Next we made two ML models. You can play with those! Choose features of a wine to be given a predicted quality as well as 3 of the best wines
             that fit your choices. Or, play wine critic and see how our ML model will rate a wine based on a description you write.
         </p>
     </div>
@@ -79,8 +79,8 @@
                 <button id="chooserEntry" type="button" class="btn btn-warning formbutton">Get a predicted score and your ideal wines</button>
             </form>
     </div>
-    <div class='col-md-6'>
-
+    <div class='col-md-6' id='wine-selections' style='padding-left:30px'>
+<!-- the output from the database search and ML algorithm based on selectors goes here -->
     </div>
   </div>
 
@@ -115,7 +115,9 @@
   </div>
 
     <!-- Tableau Viz's will go in this div-->
-    <a name='tableau'></a><div class='tableauPlaceholder' id='viz1533689615153' style='position: relative'><noscript>
+    <a name='tableau'></a>
+    <div class='row'>
+    <div class='tableauPlaceholder' id='viz1533689615153' style='position: relative'><noscript>
         <a href='#'><img alt='Dashboard ' 
             src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;Wine_24&#47;Dashboard&#47;1_rss.png' 
             style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'>
@@ -128,6 +130,7 @@
                 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;Wine_24&#47;Dashboard&#47;1.png' /> 
                 <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
                 <param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object>
+    </div>
     </div>    
     
     <div class="row">
