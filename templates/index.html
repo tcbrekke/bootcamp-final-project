@@ -63,20 +63,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="region">Choose a Region</label>
-                    <select class="form-control" id="region">
+                    <label for="region-selector">Choose a Region</label>
+                    <select class="form-control" id="region-selector">
                     </select>
                 </div>
                     <div class="form-group">
-                    <label for="country">Choose a Country</label>
-                    <select class="form-control" id="country">
+                    <label for="country-selector">Choose a Country</label>
+                    <select class="form-control" id="country-selector">
                     </select>
                 </div>
                 <div class="form-group">
                 <label for="price">Set a maximum price</label>
                 <input type="text" class="form-control" id="price" aria-describedby="price" placeholder="$$$">
                 </div>
-                <button id="chooserEntry" type="button" class="btn btn-primary formbutton">Get a predicted score and your ideal wines</button>
+                <button id="chooserEntry" type="button" class="btn btn-warning formbutton">Get a predicted score and your ideal wines</button>
             </form>
     </div>
     <div class='col-md-6'>
@@ -87,7 +87,7 @@
 
     <!-- section to put in text input and get a predicted score output -->
   <div class='row'>
-      <div class='col-md-12 main-text'>
+      <div class='col-md-12 main-text' style="margin-top:20px">
           <h3>
               Be a wine critic!
           </h3>
@@ -101,10 +101,11 @@
             <label for="predictiontext">Wine Description</label>
             <input type="text" class="form-control" id="predictiontext" aria-describedby="wineText" rows='2' placeholder="Enter a wine description">
             </div>
-            <button id="textEntry" type="button" class="btn btn-primary formbutton">Get a wine score</button>
+            <button id="textEntry" type="button" class="btn btn-warning formbutton">Get a wine score</button>
         </form>
     </div>
-    <div class='col-md-6' id='descriptionScore'>
+    <div class='col-md-6' id='descriptionScore' style="padding-left:25px">
+<!-- the score will be generated and placed here -->
     </div>
   </div>
 
@@ -127,7 +128,13 @@
                 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wi&#47;Wine_24&#47;Dashboard&#47;1.png' /> 
                 <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
                 <param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object>
-    </div>     
+    </div>    
+    
+    <div class="row">
+            <div class="col-md-12 footer">
+              <p>Copyright 2018 Steven Zulim, Aaron Burke, Thom Brekke, and Bhavani Yella</p>
+            </div>
+          </div>
      
     <!-- Links to our JS files -->
     <script src="{{ url_for('static', filename='js/desc_predictor.js') }}"></script>

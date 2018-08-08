@@ -24,6 +24,12 @@ function desc_predictor() {
     d3.json(text_url, function(error, response) {
         console.log(error);
         var score = response;
-        console.log(score);    
+        console.log(score);
+        if (score) {
+            d3.select("#descriptionScore").html(`<h3>Your wine deserves a score of:</h3><h1>${score}</h1>`);
+        }
+        else {
+            d3.select("#descriptionScore").html('');
+        }
     });
 }

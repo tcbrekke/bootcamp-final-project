@@ -33,6 +33,10 @@
     color: rgb(175, 13, 13);
 }
 
+a {
+    color: rgb(197, 122, 10);
+}
+
 .footer {
     background-color: #555;
     text-align: center;
@@ -48,13 +52,13 @@
 h1 {
     font-size: 50px;
     /* font-variant: small-caps; */
-    color: rgb(11, 60, 196);
+    color:  rgb(175, 13, 13);
 }
 
 h3 {
     /* font-size: 50px; */
     /* font-variant: small-caps; */
-    color: rgb(11, 60, 196);
+    color: rgb(196, 162, 11);
 }
 
 .form-group {
