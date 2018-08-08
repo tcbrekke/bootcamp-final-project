@@ -1,5 +1,5 @@
 //set initial variables
-var textPredictor = document.getElementById("predictiontext").value;
+var textPredictor = document.getElementById("predictiontext");
 
 // var text = document.getElementById("predictiontext").addEventListener("click", function() {
 // 	text_value = d3.select("#predictiontext").node().value;
