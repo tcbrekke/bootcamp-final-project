@@ -4,11 +4,11 @@ var populate_year_dropdown = d3.select("body").selectAll("#year-selector").selec
 	return d;
 });
 
-var ydd_value = d3.select("#year-selector").node().value; 
+var year_value = d3.select("#year-selector").node().value; 
 
-console.log(ydd_value);
+console.log(year_value);
 
 document.getElementById("year-selector").addEventListener("change", function() {
-	vdd_value = d3.select("#year-selector").node().value;
+	year_value = d3.select("#year-selector").node().value;
 	console.log(year_value);
 }, false);
