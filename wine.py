@@ -9,6 +9,12 @@ import pandas as pd
 import pickle
 import os
 from keras.models import load_model
+import datetime 
+from sklearn import preprocessing
+import sklearn
+from numpy.random import seed
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
@@ -27,13 +33,13 @@ CODE HERE
 
 # commenting out the database code for now as I don't have the database
 #connect to the database and set up variables for relevant columns
-DATABASE_URL = os.environ['DATABASE_URL']
-engine = create_engine(DATABASE_URL)
-conn = engine.connect()
+# DATABASE_URL = os.environ['DATABASE_URL']
+# engine = create_engine(DATABASE_URL)
+# conn = engine.connect()
 
-Base = automap_base()
-Base.prepare(engine, reflect=True)
-session = Session(engine)
+# Base = automap_base()
+# Base.prepare(engine, reflect=True)
+# session = Session(engine)
 
 
 
@@ -67,14 +73,14 @@ model to return a predicted wine score
 #     description_len  = request.args.get('description_len_input', None)
 #     country  = request.args.get('country', None)
 
-@app.route('/choice_score', methods=['GET'])
-# <variety>/<price>/<region>/<country>
+@app.route('/choice_score/', methods=['GET'])
+# <variety>/<price>/<region>/<country>/
 def choice_score():
-    year = request.args.get('year', None)
-    variety  = request.args.get('variety', None)
-    price  = request.args.get('price', None)
-    region  = request.args.get('region', None)
-    country  = request.args.get('country', None)
+    year = "1995"
+    variety = "Red"
+    price  = "25"
+    region  = "California"
+    country  = "United Stated"
     user_dict={ 'year': year,'variety': variety,'price':price,'region_1': region,'country': country}
     # user_dict={ 'year': 2011,'variety': "Pinot Noir",'price':13,'region_1': "Napa",'country': "Us"}
     print(user_dict)
