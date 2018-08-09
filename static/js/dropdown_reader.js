@@ -39,7 +39,7 @@ d3.select(submitButton).on("mouseup", function() {
         }
         else {
             console.log('get 3 wines error')
-            d3.select("#wine-selections").html('error');
+            d3.select("#wine-selections").html('Hmm, no wines for you.');
         }
     })
 
