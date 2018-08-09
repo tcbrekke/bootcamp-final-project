@@ -123,7 +123,7 @@ def wine_chooser(variety, price):
 
     results_df = pd.DataFrame(results)
 
-    return results_df.to_json()
+    return results_df.to_json()[0]
 
 if __name__ == "__main__":
     app.run(debug=True)
