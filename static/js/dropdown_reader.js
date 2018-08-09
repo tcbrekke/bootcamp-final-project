@@ -24,6 +24,7 @@ d3.select(submitButton).on("mouseup", function() {
             d3.select("#wine-selections").html(`<h3>This wine should get:</h3><h1>${score} stars</h1>`);
         }
         else {
+            console.log('get stars error')
             d3.select("#wine-selections").html('error');
         }
     })    
@@ -37,6 +38,7 @@ d3.select(submitButton).on("mouseup", function() {
             d3.select("#wine-selections").html(`${results}`);
         }
         else {
+            console.log('get 3 wines error')
             d3.select("#wine-selections").html('error');
         }
     })
