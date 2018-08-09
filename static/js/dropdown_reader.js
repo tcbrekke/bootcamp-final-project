@@ -21,7 +21,7 @@ d3.select(submitButton).on("mouseup", function() {
         var score = response;
         console.log(score);
         if (score) {
-            d3.select("#wine-selections").html(`<h3>Your wine deserves a score of:</h3><h1>${score}</h1>`);
+            d3.select("#wine-selections").html(`<h3>This wine should get:</h3><h1>${score} stars</h1>`);
         }
         else {
             d3.select("#wine-selections").html('error');
