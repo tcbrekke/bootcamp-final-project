@@ -125,7 +125,7 @@ def wine_chooser(variety, price):
 
     json = results_df.to_json()
 
-    return json[0]
+    return json
 
 if __name__ == "__main__":
     app.run(debug=True)
