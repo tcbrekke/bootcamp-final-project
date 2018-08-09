@@ -33,13 +33,13 @@ CODE HERE
 
 # commenting out the database code for now as I don't have the database
 #connect to the database and set up variables for relevant columns
-# DATABASE_URL = os.environ['DATABASE_URL']
-# engine = create_engine(DATABASE_URL)
-# conn = engine.connect()
+DATABASE_URL = os.environ['DATABASE_URL']
+engine = create_engine(DATABASE_URL)
+conn = engine.connect()
 
-# Base = automap_base()
-# Base.prepare(engine, reflect=True)
-# session = Session(engine)
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+session = Session(engine)
 
 
 
@@ -119,7 +119,7 @@ that fit the user's parameters
 @app.route('/wine_chooser/<variety>/<price>')
 def wine_chooser(variety, price):
 
-    results = connection.execute(f"SELECT * FROM wine_table WHERE variety = {variety} AND price < {price} ORDER BY score DESC LIMIT 3").fetchall()
+    results = conn.execute(f"SELECT title, region_1, country, points, price FROM wine_table WHERE variety = '{variety}' AND price < {price} ORDER BY points DESC LIMIT 3").fetchall()
 
     results_df = pd.DataFrame(results)
 
