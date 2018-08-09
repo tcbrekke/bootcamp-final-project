@@ -118,8 +118,6 @@ that fit the user's parameters
 '''
 @app.route('/wine_chooser/<variety>/<price>')
 def wine_chooser(variety, price):
-    variety  = request.args.get('variety', None)
-    price  = request.args.get('price', None)
 
     results = connection.execute(f"SELECT * FROM wine_table WHERE variety = {variety} AND price < {price} ORDER BY score DESC LIMIT 3").fetchall()
 
