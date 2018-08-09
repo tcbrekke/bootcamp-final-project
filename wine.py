@@ -125,7 +125,7 @@ def wine_chooser(variety, price, region, year, country):
 
     results_df = pd.DataFrame(results)
 
-    return results_df.to_json(orient="index")
+    return results_df.to_html()
 
 if __name__ == "__main__":
     app.run(debug=True)
