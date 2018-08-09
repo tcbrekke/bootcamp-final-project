@@ -30,7 +30,7 @@ d3.select(submitButton).on("mouseup", function() {
     })    
 
     // Sends selections to Thom's route and then appends results to div in index
-    d3.json(`/wine_chooser/${variety}`, function(error, response) {
+    d3.json(`/wine_chooser/${variety}/${price}`, function(error, response) {
         console.log(error);
         var results = response;
         console.log(results);
