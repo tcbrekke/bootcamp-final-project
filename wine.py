@@ -116,8 +116,8 @@ this route will take the same input as choice_score and will run a SQL query
 based on the input, and then will output 3 recommended wines from the DB
 that fit the user's parameters
 '''
-@app.route('/wine_chooser/<variety>/<price>/<region>/<year>/<country>/')
-def wine_chooser(variety, price, region, year, country):
+@app.route('/wine_chooser/<variety>')
+def wine_chooser(variety):
     variety  = request.args.get('variety', None)
     price  = request.args.get('price', None)
 
