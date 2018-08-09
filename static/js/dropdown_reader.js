@@ -35,7 +35,13 @@ d3.select(submitButton).on("mouseup", function() {
         var results = response;
         console.log(results);
         if (results) {
-            d3.select("#wine-selections").html(`${results}`);
+            d3.select("#wine-selections").html(`<h3>Your recommended wines are:</h3>
+            <ol>
+              <li>${results[0][0]}, Points: ${results[1][0]}, Price: $${results[2][0]}</li>
+              <li>${results[0][1]}, Points: ${results[1][1]}, Price: $${results[2][1]}</li>
+              <li>${results[0][2]}, Points: ${results[1][2]}, Price: $${results[2][2]}</li>
+            </ol>`
+            );
         }
         else {
             console.log('get 3 wines error')
