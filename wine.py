@@ -33,13 +33,13 @@ CODE HERE
 
 # commenting out the database code for now as I don't have the database
 #connect to the database and set up variables for relevant columns
-# DATABASE_URL = os.environ['DATABASE_URL']
-# engine = create_engine(DATABASE_URL)
-# conn = engine.connect()
+DATABASE_URL = os.environ['DATABASE_URL']
+engine = create_engine(DATABASE_URL)
+conn = engine.connect()
 
-# Base = automap_base()
-# Base.prepare(engine, reflect=True)
-# session = Session(engine)
+Base = automap_base()
+Base.prepare(engine, reflect=True)
+session = Session(engine)
 
 
 
