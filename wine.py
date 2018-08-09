@@ -119,7 +119,7 @@ that fit the user's parameters
 @app.route('/wine_chooser/<variety>/<price>')
 def wine_chooser(variety, price):
 
-    results = conn.execute(f"SELECT * FROM wine_table WHERE variety = '{variety}' AND price < {price} ORDER BY score DESC LIMIT 3").fetchall()
+    results = conn.execute(f"SELECT * FROM wine_table WHERE variety = '{variety}' AND price < {price} ORDER BY points DESC LIMIT 3").fetchall()
 
     results_df = pd.DataFrame(results)
 
