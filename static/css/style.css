@@ -21,7 +21,8 @@
 }
 
 .introtext {
-    font-size: 20px
+    font-size: 17px;
+    /* font-family: "Helvetica, sans-serif" */
 }
 
 .captiontext {
@@ -34,7 +35,8 @@
 }
 
 a {
-    color: rgb(197, 122, 10);
+    color: rgb(5, 62, 95)
+    /* rgb(197, 122, 10); */
 }
 
 .footer {
@@ -49,30 +51,50 @@ a {
     color: white
 }
 
-h1 {
+/* h1 {
     font-size: 50px;
     /* font-variant: small-caps; */
-    color:  rgb(175, 13, 13);
-}
+    /* color:  rgb(5, 62, 95); */
+/* }  */
 
 h3 {
     /* font-size: 50px; */
     /* font-variant: small-caps; */
-    color: rgb(196, 162, 11);
+    color: rgb(11, 91, 196);
 }
 
 .form-group {
-    padding-left: 100px;
+    padding-left: 30px;
 }
 
 .formbutton {
-    margin-left: 100px;
+    margin-left: 30px;
 }
 
-.main-text {
+/* .main-text {
     margin-left: 100px;
-}
+} */
 
 .tableauPlaceholder {
-    margin-left: 50px
+    margin-left: 150px
 }
+
+
+.btn-warning{
+    background-color:  rgb(5, 62, 95)
+
+}
+
+#class_form{
+    background-color:  rgb(170, 186, 196)
+}
+
+.jumbotron {
+    border-radius: 35px;
+    background: url('winery-production-3.jpg') no-repeat center center;
+    background-size: cover;
+    padding-top: 10%;
+    padding-bottom: 21%;
+    color: rgb(17, 16, 16);
+  
+  }
